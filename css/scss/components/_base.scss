@@ -5,7 +5,7 @@ $font-family-sans-serif-secondary: 'Arimo', sans-serif;
 
 body {
 	font-family: $font-family-sans-serif;
-	color: $white;
+	color: $black;
 	font-size: 16px;
 	line-height: 30px;
 	font-weight: 300;
@@ -33,7 +33,7 @@ body {
 }
 
 body, .unslate_co--site-inner {
-	background: $black;
+	background: $white;
 }
 
 ::-moz-selection { 
@@ -51,6 +51,9 @@ a {
 	}
 }
 
+.text-black {
+	color: $black;
+}
 
 .unslate_co--site-inner {
 	margin-bottom: 400px;
@@ -66,13 +69,13 @@ a {
 
 	width: 100%;
   
-  background-color: darken(#212121, 3%);
+  background-color: rgba($black, .1);
   color: #fff;
   
 	left: 0;
 	right: 0;
   bottom: 0px;
-  z-index: -1;
+  z-index: 0;
   height: 400px;
   @include media-breakpoint-down(md) {
   	height: auto!important;
@@ -97,18 +100,28 @@ a {
 	}
 	&.btn-outline-pill {
 		&.btn-custom-light {
+			color: $black;
+			border: 2px solid rgba($black, .5);
+			transition: .3s all ease;
+
+			&:hover, &:active, &:focus {
+				border-color: $black;
+			}
+		}
+
+		&.btn-white {
 			color: $white;
 			border: 2px solid rgba($white, .5);
 			transition: .3s all ease;
 
 			&:hover, &:active, &:focus {
 				border-color: $white;
-			}
+			}	
 		}
 	}
-	&.btn-bg-white--hover {
+	&.btn-bg-black--hover {
 		&:hover {
-			background-color: $white;
+			background-color: $black;
 			color: $black;
 		}
 	}
@@ -120,7 +133,7 @@ a {
   height:100%;  
   position:fixed;
   z-index:7100;
-  background: $black;
+  background: $white;
   top: 0;
   left: 0;
   right: 0;

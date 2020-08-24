@@ -191,15 +191,36 @@
 		}
 	}	
 
-	
+	&.dark {
+		.unslate_co--site-logo {
+			color: $black;
+		}
+		.site-nav-ul, .site-nav-ul-none-onepage {
+			li {
+				a {
+					color: $black;
+				}
+			}
+			> li {
+				> a {
+					&:before {
+						background: $primary;
+					}
+				}
+			}
+		}
+		.burger-toggle-menu {
+			top: 10px;
+			span {
+				background: $black;
+			}	
+		}
+	}
 
 	// burger toggle menu
 	.burger-toggle-menu {
 		display: block;
 	  width: 36px;
-  	// height: 45px;
-  	// margin-top: 50px;
-  	// margin-bottom: 50px;
 	  position: relative;
 	  -webkit-transform: rotate(0deg);
 	  -moz-transform: rotate(0deg);

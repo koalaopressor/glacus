@@ -46,6 +46,7 @@
     }
   }
 }
+
 .portfolio-item, .blog-item {
   display: block;
   overflow: hidden;
@@ -64,7 +65,7 @@
       bottom: 0;
     }
     &:before {
-      background: rgba($black, .5);
+      background: rgba($black, .1);
       content: "";
     }
   }
@@ -119,23 +120,23 @@
   
   .filter {
     font-size: 14px;
-    color: $white;
+    color: $black;
     
     
     a {
       margin-left: 10px;
-      color: rgba($white, .5);
+      color: rgba($black, .5);
       &:hover {
-        color: $white;
+        color: $black;
       }
       &.active {
-        color: $white;
+        color: $black;
       }
     }
 
     
     @include media-breakpoint-down(md) {
-      background: $black;
+      background: $white;
       z-index: 9;
       position: absolute;
       min-width: 150px;

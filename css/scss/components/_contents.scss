@@ -5,13 +5,14 @@
 	}
 	a {
 		&:hover {
-			color: $white;
+			color: $black;
 		}
 	}
 }
+
 .heading-h2 {
 	font-size: 32px;
-	color: $white;
+	color: $black;
 	font-weight: 900;
 	&.divider {
 		&:before {
@@ -23,7 +24,7 @@
 .heading-h3 {
 	font-size: 26px;
 	font-weight: 900;
-	color: $white;
+	color: $black;
 }
 .lead {
 	font-size: 18px;
@@ -190,10 +191,12 @@ figure{
 .testimonial-v1 {
 	text-align: center;
 	z-index: 9;
+
 	.testimonial-inner-bg {
+
 		padding: 50px;
 		padding-bottom: 70px;
-		background-color: #212121;
+		background-color: rgba($black, .1);
 		text-align: center;
 		font-size: 20px;
 		line-height: 40px;
@@ -221,6 +224,7 @@ figure{
 			width: 90px;
 			margin: 0 auto 30px auto;
 			border-radius: 50%;
+			box-shadow: 0 15px 30px 0 rgba($black, .2);
 		}
 		h3 {
 			font-size: 20px;
@@ -228,7 +232,7 @@ figure{
 		}
 		.position {
 			font-size: 12px;
-			color: rgba($white, .5);
+			color: rgba($black, .5);
 		}
 		
 	}
@@ -240,6 +244,7 @@ figure{
 	.owl-stage {
 		// position: relative;
 		overflow: hidden;
+
 	}
 	.owl-nav {
     @include media-breakpoint-down(md) {
@@ -251,12 +256,12 @@ figure{
       bottom: -70px;
       z-index: 99;
       transform: translateY(-50%);
-      color: $white!important;
+      color: $black!important;
       span {
       	font-size: 30px;
       }
       &:hover {
-        color: $white;
+        color: $black;
       }
       &:active, &:focus {
       	outline: none;
@@ -273,7 +278,7 @@ figure{
   	position: absolute;
   	width: 100%;
   	text-align: center;
-  	bottom: 50px;
+  	bottom: -50px;
   	.owl-dot {
   		display: inline-block;
   		> span {
@@ -282,12 +287,12 @@ figure{
 	  		width: 8px;
 	  		height: 8px;
 	  		border-radius: 50%;
-	  		background: rgba($white, .5);
+	  		background: rgba($black, .2);
 	  		transition: .3s all ease;
   		}
   		&.active {
 				> span {
-					background: rgba($white, 1);
+					background: rgba($black, 1);
 				}
   		}
   		&:active, &:focus {
@@ -295,11 +300,6 @@ figure{
   		}
   	}
   }
-}
-.testimonial-slider {
-	.owl-dots {
-		bottom: -50px;
-	}
 }
 
 .single-slider {
@@ -312,10 +312,10 @@ figure{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: rgba($black, .2)!important;
+    background: rgba($black, .05)!important;
     transition: .3s all ease;
 		&:hover {
-			background: rgba($black, .9)!important;
+			background: rgba($black, .1)!important;
 		}
     span {
     	position: absolute;
@@ -329,6 +329,14 @@ figure{
     }
   }
  
+}
+.hero-slider-wrap {
+	.owl-dots {
+  	position: absolute;
+  	width: 100%;
+  	text-align: center;
+  	bottom: 30px;
+  }
 }
 
 // Blog post
@@ -356,12 +364,12 @@ figure{
 			padding-left: 0;
 			padding-right: 0;
 			border-radius: 0;
-			color: $white;
-			border-bottom: 1px solid rgba($white, .5);
+			color: $black;
+			border-bottom: 1px solid rgba($black, .5);
 			&:active, &:focus {
 				outline: none;
 				box-shadow: none;
-				border-bottom: 1px solid rgba($white, 1);
+				border-bottom: 1px solid rgba($black, 1);
 			}
 		}
 		label {
@@ -373,7 +381,7 @@ figure{
 			font-weight: 900;
 		}
 		&.focus {
-			background: $white;
+			background: $black;
 		}
 		&.field--not-empty {
 			label {
@@ -389,13 +397,13 @@ figure{
 			padding-left: 0;
 			padding-right: 0;
 			border-radius: 0;
-			color: $white;
-			border-bottom: 1px solid rgba($white, .5);
+			color: $black;
+			border-bottom: 1px solid rgba($black, .5);
 			&:active, &:focus {
 				background: none;
 				outline: none;
 				box-shadow: none;
-				border-bottom: 1px solid rgba($white, 1);
+				border-bottom: 1px solid rgba($black, 1);
 			}
 		}
 
@@ -412,11 +420,11 @@ figure{
 		letter-spacing: .1rem;
 		font-weight: 900;
 		text-transform: uppercase;
-		color: rgba($white, .5);
+		color: rgba($black, .5);
 	}
 	.contact-info-val {
 		font-size: 20px;
-		color: $white;
+		color: $black;
 	}
 }
 
@@ -440,64 +448,63 @@ figure{
 		opacity: 0;
 		display: none;
 	}
-}
-
-.unslate_co--close-portfolio {
-	position: absolute;
-	top: -10px;
-	cursor: pointer;
-	z-index: 9;
-	padding: 10px 10px 10px 10px;
-	right: -10px;
-	border: 2px solid transparent;
-	background-color: #212121;
-	border-radius: 30px;
-	transition: .3s all ease;
-	.close-portfolio-label {
-		font-size: 14px;
-		top: 25px;
-		right: -10px;
-		width: 150px;
-		// display: none;
+	.unslate_co--close-portfolio {
 		position: absolute;
-		transform: translateY(-50%);
-		opacity: 0;
-		visibility: hidden;
+		top: 5px;
+		cursor: pointer;
+		z-index: 9;
+		padding: 10px 10px 10px 10px;
+		right: -10px;
+		border: 2px solid transparent;
+		background-color: rgba($black, .1);
+		border-radius: 30px;
 		transition: .3s all ease;
-	}
-	.wrap-icon-close {
-		font-size: 30px;
-		position: relative;
-		transition: .3s all ease;
-	}
-	&:hover {
-		.wrap-icon-close {
-			transform: rotate(90deg);
-		}
-		.close-portfolio-lanel {
-			opacity: 1;
-			left: -10px;
-			visibility: visible;
-		}	
-	}
-	&:hover, &:focus {
-		border-color: lighten(#212121, 7%);
-		background-color: lighten(#212121, 5%);
 		.close-portfolio-label {
-			right: 20px;
-			opacity: 1;
-			visibility: visible;
+			font-size: 14px;
+			top: 25px;
+			right: -10px;
+			width: 150px;
+			// display: none;
+			position: absolute;
+			transform: translateY(-50%);
+			opacity: 0;
+			visibility: hidden;
+			transition: .3s all ease;
+		}
+		.wrap-icon-close {
+			font-size: 30px;
+			position: relative;
+			transition: .3s all ease;
+		}
+		&:hover {
+			.wrap-icon-close {
+				transform: rotate(90deg);
+			}
+			.close-portfolio-lanel {
+				opacity: 1;
+				left: -10px;
+				visibility: visible;
+			}	
+		}
+		&:hover, &:focus {
+			border-color: transparent;
+			background-color: rgba($black, .15);
+			.close-portfolio-label {
+				right: 20px;
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
-}
 
-.close-portfolio--content {
-	right: 50%;
-	transform: translateX(50%);
-	.close-portfolio-label {
-		right: 50%!important;
+	.close-portfolio--content {
+		right: 50%;
 		transform: translateX(50%);
-		top: 50px;
+		.close-portfolio-label {
+			right: 50%!important;
+			transform: translateX(50%);
+			top: 50px;
+		}
 	}
 }
 
@@ -509,13 +516,13 @@ figure{
 		font-weight: 900;
 		text-transform: uppercase;
 		letter-spacing: .1rem;
-		color: rgba($white, .5);
+		color: rgba($black, .5);
 	}	
 	.detail-val {
 		font-size: 16px;
-		color: $white;
+		color: $black;
 		a {
-			color: $white;
+			color: $black;
 		}
 	}
 }
@@ -524,11 +531,11 @@ figure{
 .unslate_co--footer {
 	text-align: center;
 	font-weight: 300;
-	color: rgba($white, .5);
+	color: rgba($black, .5);
 	a {
-		color: rgba($white, .6);
+		color: rgba($black, .6);
 		&:hover {
-			color: $white;
+			color: $black;
 		}
 	}
 
@@ -538,7 +545,7 @@ figure{
 			font-size: 30px;
 			font-weight: 900;
 			font-family: $font-family-sans-serif;
-			color: $white;
+			color: $black;
 			span {
 				color: $primary;
 			}
@@ -562,13 +569,13 @@ figure{
 				display: inline-block;
 				padding-left: 20px;
 				padding-right: 20px;
-				color: rgba($white, .5);
+				color: rgba($black, .5);
 				letter-spacing: .1rem;
 				text-transform: uppercase;
 				font-size: 12px;
 				font-weight: bold;
 				&:hover, &:focus {
-					color: $white;
+					color: $black;
 				}
 			}
 		}
@@ -601,8 +608,6 @@ figure{
   }
 }
 
-
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -628,7 +633,7 @@ figure{
 
 
 span.error {
-	color: rgba($white, .5);
+	color: rgba($black, .5);
 }
 
 #message {
@@ -653,7 +658,7 @@ span.error {
 	font-weight: bold;
 	font-size: 13px;
 	letter-spacing: .1rem;
-	color: rgba($white, .5);
+	color: rgba($black, .5);
 }
 
 // Sticky
@@ -712,16 +717,16 @@ span.error {
 			}
 			.reply {
 				padding: 7px 15px;
-				background: lighten($black, 50%);
-				color: $white;
+				background: rgba($black,.2);
+				color: $black;
 				text-transform: uppercase;
 				border-radius: 30px;
 				font-size: 11px;
 				font-weight: 900;
 				letter-spacing: .1rem;
 				&:hover {
-					color: $white;
-					background: lighten($black, 55%);
+					color: $black;
+					background: rgba($black,.25);
 				}
 			}
 		}
@@ -741,7 +746,7 @@ span.error {
 			margin-bottom: 10px;
 			font-size: 11px;
 			text-transform: uppercase;
-			color: rgba($white, .4);
+			color: rgba($black, .4);
 		}
 		padding-top: 2rem;
 		padding-bottom: 2rem;
@@ -749,11 +754,6 @@ span.error {
 	}
 	
 }
-
-.logo-v1 {
-
-}
-
 
 .lines-wrap {
 	position: absolute;
@@ -773,15 +773,15 @@ span.error {
     margin-left: -570px;
     top: 0;
     height: 100%;
-    border-left: 1px solid #222;
-    border-right: 1px solid #222;
+    border-left: 1px solid darken(#fafafa, 3%);
+    border-right: 1px solid darken(#fafafa, 3%);
     .lines {
     	position: absolute;
 	    left: 33.333333%;
 	    right: 33.333333%;
 	    height: 100%;
-	    border-left: 1px solid #222;
-	    border-right: 1px solid #222;
+	    border-left: 1px solid darken(#fafafa, 3%);
+	    border-right: 1px solid darken(#fafafa, 3%);
     }
   }
 }
@@ -790,6 +790,7 @@ span.error {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
+
 	&.gsap-reveal-filter {
 		@include media-breakpoint-down(md) {
 			overflow: visible!important;
@@ -801,7 +802,7 @@ span.error {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba($black, 1);
+		background: rgba($white, 1);
 	}
 }
 

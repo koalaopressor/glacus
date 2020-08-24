@@ -33,7 +33,7 @@
 	    right: 0;
 	    bottom: 0;
 			content: "";
-			background: rgba(0,0,0,.4);
+			background: rgba(0,0,0,.15);
 		}
 
 		.mbYTP_wrapper {
@@ -52,14 +52,14 @@
 	.heading {
 		font-size: 5rem;	
 		font-weight: 900;
-		color: $white;
+		color: $black;
 		@include media-breakpoint-down(md) {
 			font-size: 3rem;
 		}
 	}
 	.blog-heading {
 		font-weight: 900;
-		color: $white;
+		color: $black;
 		font-size: 4rem;	
 		@include media-breakpoint-down(md) {
 			font-size: 2rem;
@@ -70,11 +70,12 @@
 	}
 	.subheading {
 		font-size: 33px;
-		color: $white;
+		color: $black;
 		@include media-breakpoint-down(md) {
 			font-size: 24px;
 		}
 	}
+
 }
 
 
@@ -101,7 +102,6 @@
   	letter-spacing: .05rem;
   	text-transform: uppercase;
 	}
-
 	&.dark {
 		.mouse-label {
 			color: $black;
