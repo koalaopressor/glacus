@@ -547,9 +547,9 @@ var contactForm = function() {
 				}
 			},
 			messages: {
-				name: "Please enter your name",
-				email: "Please enter a valid email address",
-				message: "Please enter a message"
+				name: "Digite Um Nome Válido",
+				email: "Digite Um Email Válido",
+				message: "Por Favor Digite Uma Mensagem"
 			},
 			errorElement: 'span',
 			errorLabelContainer: '.form-error',
