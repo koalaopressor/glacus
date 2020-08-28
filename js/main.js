@@ -18,7 +18,7 @@ jQuery(function($) {
 	floatingLabel();
 	scrollWindow();
 	counter();
-	jarallaxPlugin();
+	//jarallaxPlugin();
 	contactForm();
 	stickyFillPlugin();
 	animateReveal();
@@ -520,6 +520,7 @@ var loadPortfolioSinglePage = function(id, href) {
 
 };
 
+/*
 var jarallaxPlugin = function() {
 	$('.jarallax').jarallax({
     speed: 0.2
@@ -531,6 +532,7 @@ var jarallaxPlugin = function() {
     videoEndTime: 70,
 	});
 };
+*/
 
 var contactForm = function() {
 	if ($('#contactForm').length > 0 ) {
