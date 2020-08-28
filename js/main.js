@@ -22,7 +22,12 @@ jQuery(function($) {
 	contactForm();
 	stickyFillPlugin();
 	animateReveal();
+	
+	console.log('Site Desenvolvido Por Lucas Amaral https://www.linkedin.com/in/lucas-amaral-a99737162/');
+	console.log('------------------------------------------------------------');
+	console.log('Ícones feitos por Freepik https://www.flaticon.com/br/autores/freepik');
 
+	
 });
 
 var siteIstotope = function() {
@@ -83,7 +88,7 @@ var siteIstotope = function() {
 							tl2.to(img, 2, { scale: '1.0', ease:Expo.easeOut }, '-=1.5');
 						} } )
 
-				}, i * 700);
+				}, i * 40);
 
 				
 
