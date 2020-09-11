@@ -1,21 +1,15 @@
 <?php
+require_once 'php/email.php';
+require_once 'php/email/vendor/autoload.php';
 
-include 'php/email/vendor/autoload.php';
-include 'php/email.php';
-
-if ($_POST and $_POST != '') {
-  $msg =  '<p>Olá, aqui é o robo do seu site e vi aqui no meu banco de dados que tem gente interessada no seu negócio !</p>
-           <br>
-           <p>Olá, eu sou <strong>'.$_POST['nome'].'</strong>, e meu email é o <strong>'.$_POST['email'].'</strong> e tenho uma mensagem:</p>
-           <br>
-           '.$_POST['msg'].'.';
+if ($_POST) {
+  $msg =  '<p>Olá, aqui é o robo do seu site e vi aqui no meu banco de dados que tem gente interessada no seu negócio !</p> <br> <p>Olá, eu sou <strong>'.$_POST['nome'].'</strong>, e meu email é o <strong>'.$_POST['email'].'</strong> e tenho uma mensagem:</p> <br> '.$_POST['msg'].'.';
 
   $mail = 'contato@drglacus.com.br';
   $nome = $_POST['nome'];
 
   enviar($msg, $mail, $nome, $nome);
 }
-
 ?>
 
 <!doctype html>
