@@ -6,7 +6,7 @@ AOS.init({
 });
 
 jQuery(function($) {
-	
+
 	'use strict';
 	loader();
 	siteMenuClone();
@@ -19,15 +19,15 @@ jQuery(function($) {
 	scrollWindow();
 	counter();
 	//jarallaxPlugin();
-	contactForm();
+	// contactForm();
 	stickyFillPlugin();
 	animateReveal();
-	
+
 	console.log('Site Desenvolvido Por Lucas Amaral https://www.linkedin.com/in/lucas-amaral-a99737162/');
 	console.log('------------------------------------------------------------');
 	console.log('Ícones feitos por Freepik https://www.flaticon.com/br/autores/freepik');
 
-	
+
 });
 
 var siteIstotope = function() {
@@ -41,7 +41,7 @@ var siteIstotope = function() {
       columnWidth: '.col-sm-3'
     });
   });
-  
+
   $container.isotope({ filter: '*' });
 
   $('#filters').on( 'click', 'a', function(e) {
@@ -90,7 +90,7 @@ var siteIstotope = function() {
 
 				}, i * 40);
 
-				
+
 
 				var scene = new ScrollMagic.Scene({
 					triggerElement: this,
@@ -119,7 +119,7 @@ var loader = function() {
 		TweenMax.to('.site-loader-wrap', 1, { marginTop: 50, autoAlpha: 0, ease: Power4.easeInOut });
   }, 10);
   $(".site-loader-wrap").delay(200).fadeOut("slow");
-	$("#unslate_co--overlayer").delay(200).fadeOut("slow");	
+	$("#unslate_co--overlayer").delay(200).fadeOut("slow");
 }
 
 var siteMenuClone = function() {
@@ -130,11 +130,11 @@ var siteMenuClone = function() {
 			var $this = $(this);
 			$this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-inner');
 		});
-		
+
 		var counter = 0;
     $('.unslate_co--site-mobile-menu .has-children').each(function(){
       var $this = $(this);
-      
+
      // $this.prepend('<span class="arrow-collapse collapsed">');
 
       $this.find('.arrow-collapse').attr({
@@ -160,8 +160,8 @@ var siteMenuClone = function() {
     } else {
       $this.addClass('active');
     }
-    e.preventDefault();  
-    
+    e.preventDefault();
+
   });
 
 	$(window).resize(function() {
@@ -181,12 +181,12 @@ var siteMenuClone = function() {
   		$('body').removeClass('offcanvas');
   		$('.js-burger-toggle-menu').removeClass('open');
   	} else {
-  		$('body').addClass('offcanvas');	
+  		$('body').addClass('offcanvas');
   		$('.js-burger-toggle-menu').addClass('open');
   	}
   });
 
-}; 
+};
 
 
 
@@ -194,8 +194,8 @@ var siteMenuClone = function() {
 // var siteIstotope = function() {
 
 
-	  
-	
+
+
 // }
 
 var owlCarouselPlugin = function() {
@@ -307,30 +307,30 @@ var scrollWindow = function() {
 
 		if (st > 150) {
 			if ( !navbar.hasClass('scrolled') ) {
-				navbar.addClass('scrolled');	
+				navbar.addClass('scrolled');
 			}
-		} 
+		}
 		if (st < 150) {
 			if ( navbar.hasClass('scrolled') ) {
 				navbar.removeClass('scrolled sleep');
 			}
-		} 
+		}
 		if ( st > 350 ) {
 			if ( !navbar.hasClass('awake') ) {
-				navbar.addClass('awake');	
-			} 
+				navbar.addClass('awake');
+			}
 
 			// hide / show on scroll
 			if (st > lastScrollTop){
 	      // downscroll code
-	      navbar.removeClass('awake');	
-	      navbar.addClass('sleep');	
+	      navbar.removeClass('awake');
+	      navbar.addClass('sleep');
 	   	} else {
 	      // upscroll code
-	      navbar.addClass('awake');	
+	      navbar.addClass('awake');
 	   	}
 	   	lastScrollTop = st;
-			
+
 
 		}
 		if ( st < 350 ) {
@@ -340,7 +340,7 @@ var scrollWindow = function() {
 			}
 		}
 
-   
+
 
 	});
 
@@ -348,7 +348,7 @@ var scrollWindow = function() {
 
 
 var counter = function() {
-	
+
 	$('.section-counter').waypoint( function( direction ) {
 
 		if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
@@ -361,14 +361,14 @@ var counter = function() {
 				  {
 				    number: num,
 				    numberStep: comma_separator_number_step
-				  }, 
+				  },
 				  {
 				  	easing: 'swing',
     				duration: 3000
 				  }
 				);
 			});
-			
+
 		}
 
 	} , { offset: '95%' } );
@@ -388,7 +388,7 @@ var mobileToggleClick = function() {
   			$('.js-burger-toggle-menu').removeClass('open');
   		}
   	} else {
-  		$('body').addClass('offcanvas');	
+  		$('body').addClass('offcanvas');
   		$('.js-menu-toggle').addClass('active');
   		if ( $('.js-burger-toggle-menu').length ) {
   			$('.js-burger-toggle-menu').addClass('open');
@@ -409,7 +409,7 @@ var mobileToggleClick = function() {
 				$('body').find('.js-burger-toggle-menu').removeClass('open');
 			}
     }
-	}); 
+	});
 };
 
 
@@ -418,7 +418,7 @@ var mobileToggleClick = function() {
 var onePageNavigation = function() {
   var navToggler = $('.site-menu-toggle');
  	$("body").on("click", ".unslate_co--site-nav .site-nav-ul li a[href^='#'], .smoothscroll[href^='#'], .unslate_co--site-mobile-menu .site-nav-wrap li a[href^='#']", function(e) {
-    
+
     e.preventDefault();
 
     var $body = $('body');
@@ -428,7 +428,7 @@ var onePageNavigation = function() {
     }
 
     var hash = this.hash;
-    
+
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 1000, 'easeInOutExpo');
@@ -441,13 +441,13 @@ var onePageNavigation = function() {
 // load ajax page
 var portfolioItemClick = function() {
 	$('.ajax-load-page').on('click', function(e) {
-		
+
 		var id = $(this).data('id'),
 			href = $(this).attr('href');
 
 		if ( $('#portfolio-single-holder > div').length ) {
 			$('#portfolio-single-holder > div').remove();
-		} 
+		}
 
 		TweenMax.to('.loader-portfolio-wrap', 1, { top: '-50px', autoAlpha: 1, display: 'block', ease: Power4.easeOut });
 
@@ -455,7 +455,7 @@ var portfolioItemClick = function() {
     	scrollTop: $('#portfolio-section').offset().top - 50
 		}, 700, 'easeInOutExpo', function() {
 		});
-		
+
 		setTimeout(function(){
 			loadPortfolioSinglePage(id, href);
 		}, 100);
@@ -478,13 +478,13 @@ var portfolioItemClick = function() {
 			TweenMax.to('.portfolio-wrapper', 1, { marginTop: '0px', autoAlpha: 1, position: 'relative' });
 
 		} });
-		
+
 	});
 };
 
 $(document).ajaxStop(function(){
 	setTimeout(function(){
-		TweenMax.to('.loader-portfolio-wrap', 1, { top: '0px', autoAlpha: 0, ease: Power4.easeOut });	
+		TweenMax.to('.loader-portfolio-wrap', 1, { top: '0px', autoAlpha: 0, ease: Power4.easeOut });
 	}, 400);
 });
 
@@ -499,7 +499,7 @@ var loadPortfolioSinglePage = function(id, href) {
 			} })
 
 			var pSingleHolder = $('#portfolio-single-holder');
-	    	
+
 			var getHTMLContent = $(html).find('.portfolio-single-wrap').html();
 
 			pSingleHolder.append(
@@ -515,7 +515,7 @@ var loadPortfolioSinglePage = function(id, href) {
 				TweenMax.set('.portfolio-single-inner', { marginTop: '100px', autoAlpha: 0, display: 'none' });
 				TweenMax.to('.portfolio-single-inner', .5, { marginTop: '0px', autoAlpha: 1, display: 'block', onComplete() {
 
-					TweenMax.to('.loader-portfolio-wrap', 1, { top: '0px', autoAlpha: 0, ease: Power4.easeOut });	
+					TweenMax.to('.loader-portfolio-wrap', 1, { top: '0px', autoAlpha: 0, ease: Power4.easeOut });
 				} });
 			}, 700 );
 		}
@@ -561,16 +561,16 @@ var contactForm = function() {
 			errorElement: 'span',
 			errorLabelContainer: '.form-error',
 			/* submit via ajax */
-			submitHandler: function(form) {		
+			submitHandler: function(form) {
 				var $submit = $('.submitting'),
 					waitText = 'Submitting...';
 
-				$.ajax({   	
+				$.ajax({
 			      type: "POST",
 			      url: "php/send-email.php",
 			      data: $(form).serialize(),
 
-			      beforeSend: function() { 
+			      beforeSend: function() {
 			      	$submit.css('display', 'block').text(waitText);
 			      },
 			      success: function(msg) {
@@ -580,9 +580,9 @@ var contactForm = function() {
 	               		$('#contactForm').fadeOut();
 	               	}, 1000);
 			            setTimeout(function(){
-			               $('#form-message-success').fadeIn();   
+			               $('#form-message-success').fadeIn();
 	               	}, 1400);
-		               
+
 		            } else {
 		               $('#form-message-warning').html(msg);
 			            $('#form-message-warning').fadeIn();
@@ -594,9 +594,9 @@ var contactForm = function() {
 			         $('#form-message-warning').fadeIn();
 			         $submit.css('display', 'none');
 			      }
-		      });    		
+		      });
 	  		}
-			
+
 		} );
 	}
 };
@@ -610,7 +610,7 @@ var animateReveal = function() {
 
 
 	var controller = new ScrollMagic.Controller();
-	
+
 	var greveal = $('.gsap-reveal');
 
 	// gsap reveal
@@ -628,7 +628,7 @@ var animateReveal = function() {
 				tl
 					.fromTo(cover, 2, { skewX: 0 }, { xPercent: 101, transformOrigin: "0% 100%", ease:Expo.easeInOut })
 			}, revealNum * 0);
-			
+
 			var scene = new ScrollMagic.Scene({
 				triggerElement: this,
 				duration: "0%",
@@ -682,4 +682,3 @@ var animateReveal = function() {
 	}
 
 }
-
